@@ -2,7 +2,7 @@
 # Math library
 # Author: Sébastien Combéfis
 # Version: February 8, 2018
-
+import scipy
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
@@ -14,7 +14,7 @@ def fact(n):
 	if n == 0:
 		return 1
 	elif n < 0:
-		return ValueError
+		raise ValueError("negative value")
 	else:
 		while n > 0 :
 			sum = sum*n
@@ -35,7 +35,7 @@ def roots(a, b, c):
 	except:
 		return ()
 	if X1 == X2:
-		return X1
+		return (X1)
 	else:
 		return (X1, X2)
 
@@ -52,6 +52,8 @@ def integrate(function, lower, upper):
 		you'll probably need the 'eval' function to evaluate the function
 		to integrate given as a string.
 	"""
+	def f(x):
+		return eval(fonction)
 	
 
 if __name__ == '__main__':
