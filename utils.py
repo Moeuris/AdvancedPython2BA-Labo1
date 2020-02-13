@@ -2,7 +2,7 @@
 # Math library
 # Author: Sébastien Combéfis
 # Version: February 8, 2018
-import scipy
+from scipy.integrate import quad
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
@@ -53,7 +53,10 @@ def integrate(function, lower, upper):
 		to integrate given as a string.
 	"""
 	def f(x):
-		return eval(fonction)
+		return eval(function)
+	Result = quad(f, lower, upper)
+	Result = Result[0]
+	return Result
 	
 
 if __name__ == '__main__':
