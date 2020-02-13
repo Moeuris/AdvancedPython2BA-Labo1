@@ -10,8 +10,7 @@ class TestUtils(unittest.TestCase):
         # À compléter...
         self.assertEqual(utils.fact(2), 2)
         self.assertEqual(utils.fact(0), 1)
-        with self.assertRaises(ValueError):
-            utils.fact(-1)
+        self.assertEqual(utils.fact(-1), ValueError)
     
     def test_roots(self):
         # À compléter...
